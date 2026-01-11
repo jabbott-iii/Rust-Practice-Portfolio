@@ -3,20 +3,20 @@ use std::io::BufRead;
 
 fn main() {
     println!("Welcome to the band name generator.");
-
     println!("What city were you born in?");
 
-    let mut city: String = String::new(); // String type to hold user input
-    io::stdin() // Get standard input
-        .read_line(&mut city) // Read a line into the city variable
-        .expect("Failed to read line"); // Handle potential errors
+    // Get user input for city name
+    let mut city: String = String::new();
+        io::stdin()
+            .read_line(&mut city)
+            .expect("Failed to read line");
 
+            // Get user input for pet name
     println!("What was the name of your first pet?");
-
     let mut pet: String = String::new();
-    io::stdin()
-        .read_line(&mut pet)
-        .expect("Failed to read line");
+        io::stdin()
+            .read_line(&mut pet)
+            .expect("Failed to read line");
 
     println!("Your band name is {}{}", city.trim_end(), pet.trim_end()); // Concatenate and display the band name
 

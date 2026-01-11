@@ -5,47 +5,55 @@ use std::io::BufRead;
 fn main() {
     println!("Tip Calculator");
     
+    // Get user input for total bill
     println!("What is the total bill? $");
-    let mut bill = String::new(); // Variable to hold the total bill amount
-    io::stdin() // Get standard input
-        .read_line(&mut bill) // Read a line into the bill variable
-        .expect("Failed to read line"); // Handle potential errors
-    let decimal_bill: f64 = bill
-        .trim_end() // Remove any trailing newline characters
-        .parse() // Parse the string to a floating-point number
-        .expect("Please enter a valid number"); // Handle potential parsing errors
+    let mut bill = String::new(); 
+        io::stdin() 
+            .read_line(&mut bill)
+            .expect("Failed to read line");
 
+        // Convert bill input to f64
+        let decimal_bill: f64 = bill
+            .trim_end() 
+            .parse() 
+            .expect("Please enter a valid number");
+
+            // Get user input for tip percentage
     println!("What percentage would you like to give as a tip? ");
-    let mut tip = String::new(); // Variable to hold the tip percentage
-    io::stdin() // Get standard input
-        .read_line(&mut tip) // Read a line into the tip variable
-        .expect("Failed to read line"); // Handle potential errors
-    let decimal_tip: f64 = tip
-        .trim_end() // Remove any trailing newline characters
-        .parse() // Parse the string to a floating-point number
-        .expect("Please enter a valid number"); // Handle potential parsing errors
+    let mut tip = String::new();
+        io::stdin() 
+            .read_line(&mut tip) 
+            .expect("Failed to read line"); 
 
-    let bill = decimal_bill; // Total bill amount as f64
-    let tip = decimal_tip; // Tip percentage as f64
+            // Convert tip input to f64
+        let decimal_tip: f64 = tip
+            .trim_end() 
+            .parse() 
+            .expect("Please enter a valid number"); 
 
-    let percent = tip / 100.0; // Calculate the tip percentage
-    let total = percent * bill; // Calculate the total tip amount
+    let bill = decimal_bill; // Shadowing the bill variable
+    let tip = decimal_tip;  // Shadowing the tip variable
 
+    let percent = tip / 100.0; // Convert percentage to decimal
+    let total = percent * bill; // Calculate total tip amount
+
+    // Get user input for number of people to split the bill
     println!("How many people are you splitting the bill with? Including yourself. ");
-    let mut friends = String::new(); // Variable to hold the number of people
-    io::stdin() // Get standard input
-        .read_line(&mut friends) // Read a line into the friends variable
-        .expect("Failed to read line"); // Handle potential errors
-    let decimal_friends: f64 = friends
-        .trim_end() // Remove any trailing newline characters
-        .parse() // Parse the string to a floating-point number
-        .expect("Please enter a valid number"); // Handle potential parsing errors
+    let mut friends = String::new();
+        io::stdin() 
+            .read_line(&mut friends) 
+            .expect("Failed to read line"); 
 
-    let friends = decimal_friends; // Number of people as f64
+        // Convert friends input to f64
+        let decimal_friends: f64 = friends
+            .trim_end() 
+            .parse() 
+            .expect("Please enter a valid number"); 
 
-    let final_amount = total / friends; // Calculate the individual share of the tip
+    let friends = decimal_friends; // Shadowing the friends variable
+    let final_amount = total / friends; // Calculate individual share of the tip
 
-    println!("Individual share of the tip is ${:.2}", final_amount); // Display the individual share rounded to 2 decimal places
+    println!("Individual share of the tip is ${:.2}", final_amount);
 
     println!("Program finished. Press Enter to exit...");
     let stdin = io::stdin(); // Get standard input
