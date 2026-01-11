@@ -7,5 +7,9 @@ name = "basic_calc"
 version = "0.1.0"
 
 [[package]]
+name = "basic_if"
+version = "0.1.0"
+
+[[package]]
 name = "basic_variable"
 version = "0.1.0"
