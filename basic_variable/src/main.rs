@@ -18,7 +18,7 @@ fn main() {
             .read_line(&mut pet)
             .expect("Failed to read line");
 
-    println!("Your band name is {}{}", city.trim_end(), pet.trim_end()); // Concatenate and display the band name
+    println!("Your band name is {}{}", city.trim(), pet.trim()); // Concatenate and display the band name
 
 
     println!("Program finished. Press Enter to exit...");
