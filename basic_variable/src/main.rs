@@ -22,6 +22,6 @@ fn main() {
 
 
     println!("Program finished. Press Enter to exit...");
-        let stdin = io::stdin(); // Get standard input
-        let _ = stdin.lock().lines().next(); // Wait for user to press Enter
+    let stdin = io::stdin(); // Get standard input
+    let _ = stdin.lock().lines().next(); // Wait for user to press Enter
 }
