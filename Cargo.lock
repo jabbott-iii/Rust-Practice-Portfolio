@@ -19,5 +19,9 @@ name = "basic_if_3"
 version = "0.1.0"
 
 [[package]]
+name = "basic_odd_vs_even"
+version = "0.1.0"
+
+[[package]]
 name = "basic_variable"
 version = "0.1.0"
